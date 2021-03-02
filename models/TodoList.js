@@ -8,5 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     });
 
+    model.associate = models => {
+        model.belongsTo(model.User,{ foreignKey: 'user_id'});
+    };
     return model;
 }
